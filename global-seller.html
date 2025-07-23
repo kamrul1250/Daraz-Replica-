@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seller Registration - Daraz</title>
+  <link rel="stylesheet" href="seller-registration.css" />
+</head>
+<body class="daraz-seller-registration">
+  <div id="sr-page">  <!-- Unique wrapper -->
+
+    <header class="sr-header">
+      <img
+        src="https://img.alicdn.com/imgextra/i1/O1CN01LW5Jch1qvc6NZLLOa_!!6000000005558-55-tps-156-32.svg"
+        alt="Daraz Logo"
+        class="sr-logo"
+      />
+      <div class="sr-header-right">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.35 16.5141C17.35 17.8941 16.22 19.0241 14.84 19.0241H6.07C4.69 19.0241 3.56 17.8941 3.56 16.5141V7.74412C3.56 6.36412 4.69 5.23412 6.07 5.23412H14.84C16.22 5.23412 17.35 6.36412 17.35 7.74412V16.5141ZM14.84 6.37412C13.46 6.37412 12.33 7.50412 12.33 8.88412C12.33 10.2641 13.46 11.3941 14.84 11.3941C16.22 11.3941 17.35 10.2641 17.35 8.88412C17.35 7.50412 16.22 6.37412 14.84 6.37412ZM9.82 12.6041H6.07C5.38 12.6041 4.81 13.1741 4.81 13.8641C4.81 14.5541 5.38 15.1241 6.07 15.1241H9.82C10.51 15.1241 11.08 14.5541 11.08 13.8641C11.08 13.1741 10.51 12.6041 9.82 12.6041Z"
+            fill="black"
+            fill-opacity="0.85"
+          />
+        </svg>
+        <select id="sr-language" class="sr-language-select" aria-label="Select language">
+          <option value="zh_CN">Simplified Chinese</option>
+          <option value="en_US" selected>English</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="sr-main">
+      <section class="sr-form-container" aria-labelledby="sr-form-title">
+        <div class="sr-badge" aria-hidden="true">
+          <div class="sr-badge-text">Targeted invitation<br />to merchants</div>
+        </div>
+
+        <h2 id="sr-form-title">Seller Registration</h2>
+
+        <form id="sr-register-form" novalidate>
+          <div class="sr-form-group">
+            <label for="sr-country">Country/Region</label>
+            <div class="sr-input-group">
+              <img
+                src="//laz-g-cdn.alicdn.com/lazada/lib/0.0.6/image/ic-flag-cn.png"
+                alt="Flag"
+                class="sr-flag"
+              />
+              <select id="sr-country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="zh_CN">Mainland China</option>
+                <option value="en_US">United States</option>
+              </select>
+            </div>
+            <div class="sr-error-msg" aria-live="polite"></div>
+          </div>
+
+          <div class="sr-form-group">
+            <label for="sr-email">Email</label>
+            <div class="sr-input-group">
+              <input
+                type="email"
+                id="sr-email"
+                name="email"
+                placeholder="Enter email"
+                required
+                aria-describedby="sr-email-error"
+              />
+              <button type="button" class="sr-send-btn" aria-label="Send email code">
+                Send
+              </button>
+            </div>
+            <div class="sr-error-msg" id="sr-email-error" aria-live="polite"></div>
+          </div>
+
+          <div class="sr-form-group">
+            <label for="sr-emailCode">Email Code</label>
+            <input
+              type="text"
+              id="sr-emailCode"
+              name="emailCode"
+              placeholder="Enter code"
+              required
+              aria-describedby="sr-emailCode-error"
+            />
+            <div class="sr-error-msg" id="sr-emailCode-error" aria-live="polite"></div>
+          </div>
+
+          <div class="sr-form-group">
+            <label for="sr-password">Password</label>
+            <input
+              type="password"
+              id="sr-password"
+              name="password"
+              placeholder="Enter password"
+              required
+              minlength="6"
+              aria-describedby="sr-password-error"
+            />
+            <div class="sr-error-msg" id="sr-password-error" aria-live="polite"></div>
+          </div>
+
+          <div class="sr-form-group">
+            <label for="sr-phone">Phone Number</label>
+            <div class="sr-input-group">
+              <input
+                type="tel"
+                id="sr-phone"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+                pattern="[0-9]{10,}"
+                aria-describedby="sr-phone-error"
+              />
+              <button type="button" class="sr-send-btn" aria-label="Send SMS code">
+                Send
+              </button>
+            </div>
+            <div class="sr-error-msg" id="sr-phone-error" aria-live="polite"></div>
+          </div>
+
+          <div class="sr-form-group">
+            <label for="sr-smsCode">SMS Code</label>
+            <input
+              type="text"
+              id="sr-smsCode"
+              name="smsCode"
+              placeholder="Enter code"
+              required
+              aria-describedby="sr-smsCode-error"
+            />
+            <div class="sr-error-msg" id="sr-smsCode-error" aria-live="polite"></div>
+          </div>
+
+          <label class="sr-checkbox-group" for="sr-agree">
+            <input
+              type="checkbox"
+              id="sr-agree"
+              name="agree"
+              required
+              aria-describedby="sr-agree-error"
+            />
+            I agree to the <a href="#" class="sr-link">Terms & Privacy</a>
+          </label>
+          <div class="sr-error-msg" id="sr-agree-error" aria-live="polite"></div>
+
+          <button type="submit" class="sr-submit-btn" disabled>Register</button>
+        </form>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="seller-registration.js"></script>
+</body>
+</html>

@@ -29,15 +29,18 @@ html, body {
 }
 
 /* Top Navbar */
-.top-navbar {
-  height: 32px;
-  color: white;
-  font-size: 12px;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+#index-top-navbar {
+  background-color: #f85606;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
 }
+
+/* any other index navbar styles, use #index-top-navbar prefix */
+
 
 .top-navbar a {
   color: white;
@@ -364,3 +367,516 @@ body {
   font-weight: 700;
   font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+/* General Reset */
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;  /* Daraz uses white background behind header */
+  font-size: 14px;
+  color: #333;
+  height: 100%;
+}
+
+/* Header */
+.header-wrapper {
+  background-color:  white; /* Daraz bright orange header */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  color: #f85606; /* Daraz logo text is white in orange header */
+  font-weight: 700;
+  font-size: 20px;
+  user-select: none;
+}
+
+.nav-logo svg {
+  width: 30px;
+  height: 30px;
+  fill: #f85606;
+  margin-right: 8px; /* Slightly smaller margin */
+}
+
+.lang-select {
+  display: flex;
+  align-items: center;
+  color: #f85606;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+}
+
+.flag {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.language {
+  margin-left: 8px;
+}
+
+/* Main content background - bright orange block */
+.become-seller-container {
+  background-color: #f85606;
+  padding-top: 88px;
+  padding-bottom: 96px;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+}
+
+/* Main content wrapper inside container */
+.become-seller-content {
+  display: flex;
+  max-width: 1200px;      /* Fixed max width like Daraz */
+  width: 100%;            /* Full width up to max */
+  padding: 0 24px;        /* Horizontal padding */
+  gap: 48px;              /* Space between left and right sections */
+  box-sizing: border-box;
+  align-items: stretch;   /* equal height columns */
+  min-height: 560px;      /* vertical size */
+}
+
+/* LEFT SIDE */
+.left-side-become-seller {
+  flex: 1 1 0;
+  max-width: 580px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-side-become-seller h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 28px;
+  letter-spacing: -0.02em; /* subtle kerning like Daraz */
+}
+
+.left-side-become-seller p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+
+/* RIGHT SIDE */
+.right-side-become-seller {
+  width: 480px;
+  height: 600px;          /* fixed width box */
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;        /* prevent shrinking */
+}
+
+
+.right-side-become-seller h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111;
+  letter-spacing: 0.02em;
+}
+
+.left-side-become-seller,
+.right-side-become-seller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content */
+}
+
+/* Inputs */
+.right-side-become-seller input {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.right-side-become-seller input:focus {
+  border-color: #f85606;
+  box-shadow: 0 0 8px rgba(248, 86, 6, 0.3);
+  outline: none;
+}
+
+/* Password wrapper: if you have toggle icon, keep as is */
+
+/* Login button */
+.btn-login {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #f85606;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(248, 86, 6, 0.4);
+}
+
+.btn-login:hover {
+  background-color: #e04e05;
+  box-shadow: 0 8px 16px rgba(224, 78, 5, 0.6);
+}
+
+/* Terms text */
+.terms-text {
+  margin-top: 22px;
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+  line-height: 1.5;
+}
+
+.terms-text a {
+  color: #f85606;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
+/* Links below */
+.links {
+  font-size: 14px;
+  text-align: right;
+  margin-top: 24px;
+}
+
+.links a {
+  display: block;
+  margin-bottom: 6px;
+  color: #0071dc;  /* Daraz uses a strong blue */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: #e04e05;
+}
+
+/* Create account */
+.create-account {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 28px;
+  color: #555;
+}
+
+.create-account a {
+  color: #0071dc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.create-account a:hover {
+  color: #e04e05;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-top: 80px;
+}
+
+footer p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .become-seller-content {
+    flex-direction: column;
+    gap: 40px;
+    min-height: auto;
+    padding: 0 16px;
+  }
+  .right-side-become-seller {
+    max-width: 100%;
+    padding: 40px 32px;
+    border-radius: 20px;
+  }
+  .left-side-become-seller {
+    max-width: 100%;
+    text-align: center;
+  }
+  .left-side-become-seller h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .left-side-become-seller p {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .links {
+    text-align: center;
+  }
+}
+
+
+
+
+/* Js validation */
+
+.error-text {
+  color: red;
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+.input-error {
+  border: 1px solid red;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Scope everything inside #sr-page */
+#sr-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#sr-page .sr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#sr-page .sr-logo {
+  height: 32px;
+  user-select: none;
+}
+
+#sr-page .sr-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#sr-page .sr-language-select {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#sr-page .sr-main {
+  max-width: 480px;
+  margin: 40px auto 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  padding: 32px;
+}
+
+#sr-page .sr-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#sr-page .sr-badge {
+  background-color: #f85606;
+  color: white;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+#sr-page .sr-badge-text {
+  white-space: pre-line;
+}
+
+#sr-page h2#sr-form-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #111;
+  text-align: center;
+}
+
+#sr-page .sr-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#sr-page .sr-form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+#sr-page .sr-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#sr-page .sr-flag {
+  width: 20px;
+  height: auto;
+}
+
+#sr-page select,
+#sr-page input[type="email"],
+#sr-page input[type="text"],
+#sr-page input[type="password"],
+#sr-page input[type="tel"] {
+  flex-grow: 1;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+#sr-page select:focus,
+#sr-page input[type="email"]:focus,
+#sr-page input[type="text"]:focus,
+#sr-page input[type="password"]:focus,
+#sr-page input[type="tel"]:focus {
+  outline: none;
+  border-color: #f85606;
+}
+
+#sr-page .sr-send-btn {
+  background-color: #f85606;
+  border: none;
+  padding: 10px 14px;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#sr-page .sr-send-btn:hover {
+  background-color: #e04e05;
+}
+
+#sr-page .sr-error-msg {
+  color: #f00;
+  font-size: 13px;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+#sr-page .sr-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-top: 12px;
+  user-select: none;
+}
+
+#sr-page .sr-checkbox-group input {
+  cursor: pointer;
+}
+
+#sr-page .sr-link {
+  color: #0071dc;
+  text-decoration: none;
+}
+
+#sr-page .sr-link:hover {
+  text-decoration: underline;
+}
+
+#sr-page .sr-submit-btn {
+  margin-top: 24px;
+  background-color: #f85606;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#sr-page .sr-submit-btn:hover:not(:disabled) {
+  background-color: #e04e05;
+}
+
+#sr-page .sr-submit-btn:disabled {
+  background-color: #fbc1a4;
+  cursor: not-allowed;
+}
+
