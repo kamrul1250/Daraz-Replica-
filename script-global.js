@@ -77,3 +77,50 @@ document.addEventListener('DOMContentLoaded', function () {
     return re.test(phone);
   }
 });
+
+
+
+
+const translations = {
+  en_US: {
+    title: "Welcome to the Cross-Border Seller Center",
+    h2: "Fill in registration information",
+    countryLabel: "* Country/Region of Company Registration",
+    emailLabel: "* Email address",
+    emailPlaceholder: "Please enter your email",
+    // add all other texts...
+    signInButton: "Sign in",
+    registrationButton: "Registration",
+    // etc.
+  },
+  zh_CN: {
+    title: "欢迎来到跨境卖家中心",
+    h2: "填写注册信息",
+    countryLabel: "* 公司注册国家/地区",
+    emailLabel: "* 电子邮箱地址",
+    emailPlaceholder: "请输入您的邮箱",
+    signInButton: "登录",
+    registrationButton: "注册",
+    // etc.
+  },
+};
+
+const languageSelect = document.getElementById("sr-language");
+
+languageSelect.addEventListener("change", (event) => {
+  const lang = event.target.value;
+  const t = translations[lang];
+
+  if (!t) return; // fallback
+
+  // Update all elements accordingly
+  document.querySelector("h1").innerText = t.title;
+  document.querySelector(".container h2").innerText = t.h2;
+  document.querySelector('label[for="country"]').innerText = t.countryLabel;
+  document.querySelector('label[for="email"]').innerText = t.emailLabel;
+  document.querySelector('#email').placeholder = t.emailPlaceholder;
+  document.querySelector(".signIn button").innerText = t.signInButton;
+  document.querySelector('form button[type="submit"]').innerText = t.registrationButton;
+
+  // similarly update other labels, placeholders, buttons...
+});
