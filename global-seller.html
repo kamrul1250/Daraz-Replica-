@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="seller-registration.css" />
 </head>
 <body class="daraz-seller-registration">
-  <div id="sr-page">  <!-- Unique wrapper -->
+  <div id="sr-page">
 
     <header class="sr-header">
       <img
@@ -15,149 +15,102 @@
         alt="Daraz Logo"
         class="sr-logo"
       />
-      <div class="sr-header-right">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17.35 16.5141C17.35 17.8941 16.22 19.0241 14.84 19.0241H6.07C4.69 19.0241 3.56 17.8941 3.56 16.5141V7.74412C3.56 6.36412 4.69 5.23412 6.07 5.23412H14.84C16.22 5.23412 17.35 6.36412 17.35 7.74412V16.5141ZM14.84 6.37412C13.46 6.37412 12.33 7.50412 12.33 8.88412C12.33 10.2641 13.46 11.3941 14.84 11.3941C16.22 11.3941 17.35 10.2641 17.35 8.88412C17.35 7.50412 16.22 6.37412 14.84 6.37412ZM9.82 12.6041H6.07C5.38 12.6041 4.81 13.1741 4.81 13.8641C4.81 14.5541 5.38 15.1241 6.07 15.1241H9.82C10.51 15.1241 11.08 14.5541 11.08 13.8641C11.08 13.1741 10.51 12.6041 9.82 12.6041Z"
-            fill="black"
-            fill-opacity="0.85"
-          />
-        </svg>
-        <select id="sr-language" class="sr-language-select" aria-label="Select language">
-          <option value="zh_CN">Simplified Chinese</option>
-          <option value="en_US" selected>English</option>
-        </select>
+      <div class="sr-header-lang-sign">
+        <div class="sr-header-right">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.35 16.5141C17.35 17.8941 16.22 19.0241 14.84 19.0241H6.07C4.69 19.0241 3.56 17.8941 3.56 16.5141V7.74412C3.56 6.36412 4.69 5.23412 6.07 5.23412H14.84C16.22 5.23412 17.35 6.36412 17.35 7.74412V16.5141ZM14.84 6.37412C13.46 6.37412 12.33 7.50412 12.33 8.88412C12.33 10.2641 13.46 11.3941 14.84 11.3941C16.22 11.3941 17.35 10.2641 17.35 8.88412C17.35 7.50412 16.22 6.37412 14.84 6.37412ZM9.82 12.6041H6.07C5.38 12.6041 4.81 13.1741 4.81 13.8641C4.81 14.5541 5.38 15.1241 6.07 15.1241H9.82C10.51 15.1241 11.08 14.5541 11.08 13.8641C11.08 13.1741 10.51 12.6041 9.82 12.6041Z"
+              fill="black"
+              fill-opacity="0.85"
+            />
+          </svg>
+          <select id="sr-language" class="sr-language-select" aria-label="Select language">
+            <option value="zh_CN">Simplified Chinese</option>
+            <option value="en_US" selected>English</option>
+          </select>
+        </div>
+        <div class="signIn">
+          <button type="submit">Sign in</button>
+        </div>
       </div>
     </header>
+<h1>Welcome to the Cross-Border Seller Center</h1>
+    <div class="container">
+      <h2>Fill in registration information</h2>
+      <form id="registrationForm" action="register.php" method="post" novalidate>
+        <label for="country">* Country/Region of Company Registration</label>
+        <select id="country" name="country" required>
+          <option value="Mainland China">Mainland China</option>
+        </select>
 
-    <main class="sr-main">
-      <section class="sr-form-container" aria-labelledby="sr-form-title">
-        <div class="sr-badge" aria-hidden="true">
-          <div class="sr-badge-text">Targeted invitation<br />to merchants</div>
+        <label for="email">* Email address</label>
+        <input type="email" id="email" name="email" placeholder="Please enter your email" required />
+
+        <label for="email-verification">Email Verification Code</label>
+        <div class="input-button-group">
+          <input
+            type="text"
+            id="email-verification"
+            name="email_verification"
+            placeholder="Verification code"
+          />
+          <button type="button" onclick="sendEmailVerification()">Send</button>
         </div>
 
-        <h2 id="sr-form-title">Seller Registration</h2>
+        <label for="password">* Set up an account password</label>
+        <input type="password" id="password" name="password" placeholder="Please enter password" required />
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm_password"
+          placeholder="Please enter password again"
+          required
+        />
 
-        <form id="sr-register-form" novalidate>
-          <div class="sr-form-group">
-            <label for="sr-country">Country/Region</label>
-            <div class="sr-input-group">
-              <img
-                src="//laz-g-cdn.alicdn.com/lazada/lib/0.0.6/image/ic-flag-cn.png"
-                alt="Flag"
-                class="sr-flag"
-              />
-              <select id="sr-country" name="country" required>
-                <option value="">Select Country</option>
-                <option value="zh_CN">Mainland China</option>
-                <option value="en_US">United States</option>
-              </select>
-            </div>
-            <div class="sr-error-msg" aria-live="polite"></div>
-          </div>
+        <label for="phone">* Bind Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Please enter your mobile number" required />
 
-          <div class="sr-form-group">
-            <label for="sr-email">Email</label>
-            <div class="sr-input-group">
-              <input
-                type="email"
-                id="sr-email"
-                name="email"
-                placeholder="Enter email"
-                required
-                aria-describedby="sr-email-error"
-              />
-              <button type="button" class="sr-send-btn" aria-label="Send email code">
-                Send
-              </button>
-            </div>
-            <div class="sr-error-msg" id="sr-email-error" aria-live="polite"></div>
-          </div>
+        <label for="sms-verification">SMS Verification Code</label>
+        <div class="input-button-group">
+          <input
+            type="text"
+            id="sms-verification"
+            name="sms_verification"
+            placeholder="Enter the SMS verification code"
+          />
+          <button type="button" onclick="sendSMSVerification()">Send</button>
+        </div>
 
-          <div class="sr-form-group">
-            <label for="sr-emailCode">Email Code</label>
-            <input
-              type="text"
-              id="sr-emailCode"
-              name="emailCode"
-              placeholder="Enter code"
-              required
-              aria-describedby="sr-emailCode-error"
-            />
-            <div class="sr-error-msg" id="sr-emailCode-error" aria-live="polite"></div>
-          </div>
-
-          <div class="sr-form-group">
-            <label for="sr-password">Password</label>
-            <input
-              type="password"
-              id="sr-password"
-              name="password"
-              placeholder="Enter password"
-              required
-              minlength="6"
-              aria-describedby="sr-password-error"
-            />
-            <div class="sr-error-msg" id="sr-password-error" aria-live="polite"></div>
-          </div>
-
-          <div class="sr-form-group">
-            <label for="sr-phone">Phone Number</label>
-            <div class="sr-input-group">
-              <input
-                type="tel"
-                id="sr-phone"
-                name="phone"
-                placeholder="Enter phone number"
-                required
-                pattern="[0-9]{10,}"
-                aria-describedby="sr-phone-error"
-              />
-              <button type="button" class="sr-send-btn" aria-label="Send SMS code">
-                Send
-              </button>
-            </div>
-            <div class="sr-error-msg" id="sr-phone-error" aria-live="polite"></div>
-          </div>
-
-          <div class="sr-form-group">
-            <label for="sr-smsCode">SMS Code</label>
-            <input
-              type="text"
-              id="sr-smsCode"
-              name="smsCode"
-              placeholder="Enter code"
-              required
-              aria-describedby="sr-smsCode-error"
-            />
-            <div class="sr-error-msg" id="sr-smsCode-error" aria-live="polite"></div>
-          </div>
-
-          <label class="sr-checkbox-group" for="sr-agree">
-            <input
-              type="checkbox"
-              id="sr-agree"
-              name="agree"
-              required
-              aria-describedby="sr-agree-error"
-            />
-            I agree to the <a href="#" class="sr-link">Terms & Privacy</a>
+        <div class="checkbox-group">
+          <input type="checkbox" id="agreement1" required />
+          <label for="agreement1">
+            I have read and agree to the
+            <a href="#">Cross-border Merchants Unified Workbench Service Agreement</a>
           </label>
-          <div class="sr-error-msg" id="sr-agree-error" aria-live="polite"></div>
+        </div>
 
-          <button type="submit" class="sr-submit-btn" disabled>Register</button>
-        </form>
-      </section>
-    </main>
+        <div class="checkbox-group">
+          <input type="checkbox" id="agreement2" required />
+          <label for="agreement2">
+            I have read and agree to the
+            <a href="#">Consent Letter for Cross-border Transmission of Personal Information by Chinese Seller</a>
+          </label>
+        </div>
 
+        <button type="submit">Registration</button>
+      </form>
+    </div>
   </div>
 
-  <script src="seller-registration.js"></script>
+  <script>
+    function sendEmailVerification() {
+      alert("Email verification code sent!");
+    }
+    function sendSMSVerification() {
+      alert("SMS verification code sent!");
+    }
+  </script>
+
+  <script src="script-global.js"></script>
 </body>
 </html>
